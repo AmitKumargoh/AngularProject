@@ -1,0 +1,124 @@
+<p>
+  parking works!
+</p>
+<!-- <mat-toolbar>
+  <mat-toolbar-row>
+    <a target="_blank" href="https://material.angular.io/">Angular Material</a>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <a target="_blank" href="https://www.npmjs.com/package/@angular/flex-layout">Flex-Layout</a>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <a target="_blank" href="https://www.letsboot.com/">Letsboot.com</a>
+  </mat-toolbar-row>
+</mat-toolbar> -->
+
+<mat-form-field class="search-form">
+  <input matInput placeholder="Search Picture" type="text">
+</mat-form-field>
+<button button="submit" mat-raised-button color="primary">Search</button>
+<br>
+<div fxLayout="row" fxLayout.xs="row" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="start" style="overflow-y : auto">
+  <mat-card class="card-picture" *ngFor="let parkingdata of parkingdata">
+    <div *ngIf="parkingdata.ctype !== 0; else emptyBox">
+        <!-- <div *ngIf="picture.id !== 2; else emptyBox"> -->
+    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+      <span fxFlex="basis">{{parkingdata.pid}}  {{parkingdata.veowner}}</span>
+      <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+      <mat-icon fxFlex="10%">delete</mat-icon> -->
+    </mat-card-title>
+    <img mat-card-image src={{img}}>
+    <mat-card-footer>
+        <mat-icon fxFlex="30%">mode_edit</mat-icon>
+        <span fxFlex="40%">{{parkingdata.cnumber}}</span>
+        <mat-icon fxFlex="100%" matTooltip="click to checkout" matTooltipPosition="above">delete</mat-icon>
+      </mat-card-footer>
+    </div>
+    <ng-template #emptyBox>
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+            <span fxFlex="basis">Empty</span>
+            <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+            <mat-icon fxFlex="10%">delete</mat-icon> -->
+          </mat-card-title>
+            <img mat-card-image src={{avlpark}} (click)="openDialog(parkingdata.pid)" matTooltip="click to checkin" matTooltipPosition="above"> 
+      </ng-template>
+  </mat-card>
+</div>
+<br><br>
+<div fxLayout="row" fxLayout.xs="row" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card class="card-picture" *ngFor="let picture of pictures">
+        <div *ngIf="picture.id !== 2; else emptyBox">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="50px">{{picture.title}}</span>
+        <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+        <mat-icon fxFlex="10%">delete</mat-icon> -->
+      </mat-card-title>
+      <img mat-card-image [src]="picture.img">
+      <mat-card-footer>
+          <mat-icon fxFlex="30%">mode_edit</mat-icon>
+          <span fxFlex="40%">{{picture.cnumber}}</span>
+          <mat-icon fxFlex="100%" matTooltip="click to checkout" matTooltipPosition="above">delete</mat-icon>
+        </mat-card-footer>
+        </div>
+        <ng-template #emptyBox>
+            <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+                <span fxFlex="basis">Empty</span>
+                <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+                <mat-icon fxFlex="10%">delete</mat-icon> -->
+              </mat-card-title>
+              <img mat-card-image [src]="picture.avlpark" (click)="openDialog(picture.id)" matTooltip="click to checkin" matTooltipPosition="above">
+          </ng-template>
+    </mat-card>
+  </div>
+  <br><br>
+<div fxLayout="row" fxLayout.xs="row" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card class="card-picture" *ngFor="let picture of pictures">
+        <div *ngIf="picture.id !== 6; else emptyBox">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="50px">{{picture.title}}</span>
+        <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+        <mat-icon fxFlex="10%">delete</mat-icon> -->
+      </mat-card-title>
+      <img mat-card-image [src]="picture.img">
+      <mat-card-footer>
+          <mat-icon fxFlex="30%">mode_edit</mat-icon>
+          <span fxFlex="40%">{{picture.cnumber}}</span>
+          <mat-icon fxFlex="100%" matTooltip="click to checkout" matTooltipPosition="above">delete</mat-icon>
+        </mat-card-footer>
+        </div>
+        <ng-template #emptyBox>
+            <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+                <span fxFlex="basis">Empty</span>
+                <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+                <mat-icon fxFlex="10%">delete</mat-icon> -->
+              </mat-card-title>
+              <img mat-card-image [src]="picture.avlpark" (click)="openDialog(picture.id)" matTooltip="click to checkin" matTooltipPosition="above">
+          </ng-template>
+    </mat-card>
+  </div>
+  <br><br>
+<div fxLayout="row" fxLayout.xs="row" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card class="card-picture" *ngFor="let picture of pictures">
+        <div *ngIf="picture.id !== 5; else emptyBox">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="50px">{{picture.title}}</span>
+        <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+        <mat-icon fxFlex="10%">delete</mat-icon> -->
+      </mat-card-title>
+      <img mat-card-image [src]="picture.img">
+      <mat-card-footer>
+          <mat-icon fxFlex="30%">mode_edit</mat-icon>
+          <span fxFlex="40%">{{picture.cnumber}}</span>
+          <mat-icon fxFlex="100%" matTooltip="click to checkout" matTooltipPosition="above">delete</mat-icon>
+        </mat-card-footer>
+        </div>
+        <ng-template #emptyBox>
+            <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+                <span fxFlex="basis">Empty</span>
+                <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+                <mat-icon fxFlex="10%">delete</mat-icon> -->
+              </mat-card-title>
+              <img mat-card-image [src]="picture.avlpark" (click)="openDialog(picture.id)" matTooltip="click to checkin" matTooltipPosition="above">
+          </ng-template>
+    </mat-card>
+  </div>

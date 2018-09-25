@@ -1,0 +1,35 @@
+/* .container{
+    height: 100%;
+    width: 100%;
+    background-color: powderblue;
+} */
+
+.img {
+    width: 100%;
+    margin-bottom: 18%;
+  }
+  .card-picture {
+    width: 23%;
+    margin-bottom: 2%;
+  }
+  .container {
+    min-height: 100%;
+    width: 100%;
+  }
+  .search-form {
+    width: 90%;
+  }
+/* #home-container {
+    background-color: lightblue;
+}
+
+div.home-container {
+    background-color: lightblue;
+} */
+
+/* .home-container{
+    background-image: url("../../../assets/Line-Painting-04-min.jpg");
+    background-repeat: no-repeat
+ } */
+/* .container{height:600px ; width: 800px}
+.title{color: ivory; padding-top:150px; padding-bottom:10px; font-size: xx-large;padding-left: 100px } */

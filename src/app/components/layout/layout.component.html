@@ -1,0 +1,38 @@
+<!-- <app-header></app-header>
+<div class="container">
+  <ng-content></ng-content>
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer> -->
+
+<div>
+  <h2 mat-dialog-title>My Dialog</h2>
+  <hr>
+  <mat-dialog-content>
+    some text some text some text some text some text 
+    <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="inputUserName">User Name</label>
+            <input class="form-control" placeholder="Login Username" type="text" id="inputUserName">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input class="form-control" placeholder="Login Password" type="password" id="inputPassword">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary">Login</button>
+            <button class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    <br>
+    <br>
+    <strong>{{data}}</strong>
+  </mat-dialog-content>
+  <hr>
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="onCloseConfirm()">Confirm</button>
+    <button mat-raised-button (click)="onCloseCancel()">Cancel</button>
+  </mat-dialog-actions>
+</div>
